@@ -1,33 +1,64 @@
 import React from "react";
 
 const Github = () => {
+    const styles = {
+        container: {
+            maxWidth: '700px',
+            margin: '0 auto',
+            padding: '20px',
+            borderRadius: '8px',
+            backgroundColor: '#222', // Dark background to match the page
+            color: '#f0f0f0', // Light text color
+            fontFamily: "'Arial', sans-serif",
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.4)',
+        },
+        header: {
+            color: '#f0f0f0',
+            textAlign: 'left',
+            fontSize: '24px',
+            marginBottom: '15px',
+            fontWeight: 'bold',
+        },
+        paragraph: {
+            lineHeight: '1.6',
+            textAlign: 'justify',
+            marginBottom: '20px',
+            fontSize: '16px',
+        },
+        link: {
+            color: '#4caf50', // Green color to match the theme
+            fontWeight: 'bold',
+            textDecoration: 'none',
+            padding: '8px 12px',
+            borderRadius: '4px',
+            backgroundColor: '#333',
+            display: 'inline-block',
+            transition: 'background-color 0.3s ease',
+        },
+        linkHover: {
+            backgroundColor: '#555',
+        },
+    };
 
     return (
-        <div>
-            <h2>
-                Paragraph and Github Link
-            </h2>
-            <p>
-                Man stands face to face with the irrational. He feels within him his longing for happiness and for
-                reason. The absurd is born of this confrontation between the human need and the unreasonable silence of
-                the world.
-                <br />
-
-                Likewise and during every day of an unillustrious life, time carries us. But a moment always comes when
-                we have to carry it. We live on the future: “tomorrow,” “later on,” “when you have made your way,” “you
-                will understand when you are old enough.” Such irrelevancies are wonderful, for, after all, it’s a
-                matter of dying. Yet a day comes when a man notices or says that he is thirty. Thus he asserts his
-                youth. But simultaneously he situates himself in relation to time. He takes his place in it. He admits
-                that he stands at a certain point on a curve that he acknowledges having to travel to its end. He
-                belongs to time, and by the horror that seizes him, he recognizes his worst enemy. Tomorrow, he was
-                longing for tomorrow, whereas everything in him ought to reject it. That revolt of the flesh is the
-                absurd.
+        <div style={styles.container}>
+            <h2 style={styles.header}>Paragraph and Github Link</h2>
+            <p style={styles.paragraph}>
+                The project I am interested in is a Todo App with htmx that runs on a flask server.
+                The server will connect to a database using the ORM peewee and will store data about todos
+                and who people are following. htmx is a javascript alternative that allows a hypermedia approach
+                to dynamic web content. Flask is a web server alternative to something like NodeJs.
             </p>
-            <a href={""}>
+            <a
+                href="https://github.com/BurginLuker/csci-331-fall-2024/tree/main/nextjs-assignment"
+                style={styles.link}
+                onMouseEnter={(e) => (e.target.style.backgroundColor = styles.linkHover.backgroundColor)}
+                onMouseLeave={(e) => (e.target.style.backgroundColor = styles.link.backgroundColor)}
+            >
                 NextJs Assignment Github Link
             </a>
         </div>
-    )
-}
+    );
+};
 
 export default Github;
