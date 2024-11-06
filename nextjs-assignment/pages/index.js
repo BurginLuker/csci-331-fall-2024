@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
-import Counter from "@/pages/Counter";
-import Github from "@/pages/Github";
+import Counter from "@/pages/components/Counter";
+import Github from "@/pages/components/Github";
+import MainPage from "@/pages/components/MainPage";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -30,19 +31,7 @@ export default function Home() {
             >
                 <main className={styles.main}>
                     <h1>Burgin Luker NextJs Assignment</h1>
-                    <div style={{display: "flex", margin: "20px", textAlign: "center"}}>
-                        <div style={{margin: "20px"}}>
-                            <Counter color={"green"} increment={1}/>
-                        </div>
-                        <div style={{margin: "20px"}}>
-                            <Counter color={"red"} increment={2}/>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 style={{marginBottom: "5px"}}>My Store API</h1>
-                        <a style={{textDecoration: "underline", padding: "10px"}} href={"http://localhost:3047/Store"}>Click
-                            Here To Check Out The Store!</a>
-                    </div>
+                    <MainPage />
                     <Github/>
                 </main>
             </div>
